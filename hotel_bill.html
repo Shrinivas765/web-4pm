@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div> 
+
+
+        <ul>
+            <li>volvo</li>
+            <li>saab</li>
+            <li>mercedes</li>
+            <li>audi</li>
+        </ul>
+        <ul>
+            <li>volvo: 200 400</li>
+            <li>saab:500, 600</li>
+            <li>mercedes: 700 990</li>
+            <li>audi : 500 800</li>
+        </ul>
+
+        <label for="cars">Choose a car:</label>
+
+<select name="hotel" id="hotel">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select><br>
+
+<label for="day">no of days:</label>
+
+<select name="cars" id="day">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+</select>
+<label for="priceday">Price for day:</label>
+
+<select name="cars" id="pday">
+  <option value="1000">1000</option>
+  <option value="2200">2200</option>
+  <option value="330">330</option>
+  <option value="450">450</option>
+</select>
+<br>
+<input type="radio" id="bed" name="fav_language" value="single_bed">
+<label for="html">single_bed</label><br>
+<input type="radio" id="bed" name="fav_language" value="double_bed">
+<label for="css">double_bed</label><br>
+<button type="submit" onclick="cal()">
+    Submit
+</button>
+<hr>
+<p id="hotelp"></p>
+<p id="dayp"></p>
+<p id ="bill"></p>
+        </div>
+        <script>
+            function cal(){
+                const hotel =document.getElementById("hotel").value;
+                const days = document.getElementById("day").value;
+                const bed = document.getElementById("bed").value;
+                const priceday =document.getElementById("pday") .value;
+            document.getElementById("hotelp").innerHTML=`Selected Hotel is :${hotel} for ${bed}`
+            document.getElementById("dayp").innerHTML=`No of days are :${days} `
+                console.log(hotel ,days)
+           
+                let bill = priceday*days
+document.getElementById("bill").innerHTML=  `Bill is: ${bill}`       
+
+
+
+
+            }
+        </script>
+</body>
+</html>

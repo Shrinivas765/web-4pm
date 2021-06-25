@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Report Card</title>
+        <style>
+            .hero{
+                position: relative;
+                height: 100vh;
+background-image: ;
+            }
+ 
+        </style>
+    </head>
+    <body>
+        <div class="hero">
+            <label>Enter your Maths Mark:</label>
+
+            <input type="text" name="mmark" id="math" ><br>
+
+            <label>Enter your English Mark:</label>
+            <input type="text" name="mmark" id="english" ><br>
+            <label>Enter your Computer Science Mark:</label>
+
+            <input type="text" name="mmark" id="science" ><br>
+            <label>Enter your Chemistry Mark:</label>
+
+            <input type="text" name="mmark" id="chem" ><br>
+            <button type="submit" onclick="onclickreport()">Result</button>
+            
+            <hr>
+            <p id="report"></p>
+        </div>
+        <!-- <form> -->
+            
+        <!-- </form> -->
+        <script>
+            function onclickreport(){
+                // alert("kkhhgj")
+                math = document.getElementById("math").value;
+                english = document.getElementById("english").value;
+                science = document.getElementById("science").value;
+                chem = document.getElementById("chem").value;
+                console.log(math)
+                totalmark = parseFloat(math) + parseFloat(english) + parseFloat (science) + parseFloat(chem)
+                console.log(totalmark);
+                per = (totalmark /400) *100
+                console.log(per)
+
+                let grade="";
+                if((per<=100) &&(per>=80))
+                {
+                    grade="A";
+                }else if((per<=79)&&(per>=60))
+                {
+                    grade="B"
+                }else if((per>=59)&& (per<=35))
+                {
+                    grade="c"
+                }
+                else{
+                    grade="Fail"
+                }
+                document.getElementById("report").innerHTML=`Out of 400 You got:${totalmark}, and Your grade is ${grade} ,congratulation you got: ${per}`
+            }
+        </script>
+    </body>
+</html>

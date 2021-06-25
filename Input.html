@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>student grade</title>
+    </head>
+    <body>
+        <center>
+        <div class ="form container" style="background:pink; width:800px;height:250px">
+        <div class="app-form"style="float:left weidth:300px">
+        <h2>Student grade marks</h2>
+        </div>
+            <div class="app-form1"style="float:left width:300px">
+                <div>
+                    <label for="wd">enter your web development marks:</label>
+                        <input type="text"  id="wd">
+                </div>
+                <div>
+                    <label for="wd">enter your maths marks:</label>
+                        <input type="text"  id="maths">
+                </div>
+                <div>
+                    <label for="wd">enter your com marks:</label>
+                        <input type="text"  id="com">
+                <div>
+                    <label for="wd">enter your phy marks:</label>
+                        <input type="text"  id="phy">
+                </div>
+                <div>
+                        <input type="button" value="show percent" id="btn" onclick="cal()">
+                </div>
+            </div>
+            <div>
+                <p id="result">
+                    
+                </p>
+            </div>
+            
+        </div>
+        </center>
+        <script>
+        function cal() {
+             wd = document.getElementById("wd").value
+             maths = document.getElementById("maths").value
+             com = document.getElementById("com").value
+             phy = document.getElementById("phy").value
+           // console.log(maths)
+        totalmark=parseFloat(wd)+parseFloat(maths)+parseFloat(com)+parseFloat(phy)
+                console.log(totalmark)
+              let perc=(totalmark/400)*100
+              //console.log(perc)  
+let grade=""
+if((perc<=100)&&(perc>=80))
+{
+    grade="A"
+}else if((perc<=79)&&(perc>=60))
+{
+    grade="B"
+}else if((perc<=59)&&(perc>=40))
+{
+    grade="C"
+}else
+{
+    grade="Fail"
+}
+document.getElementById("result").innerHTML = `out of 400 your total is ${totalmark} <br>percentage is ${perc} %<br>and grade is ${grade}`
+//console.log(grade)
+        }
+              
+        </script>
+    </body>
+</html>

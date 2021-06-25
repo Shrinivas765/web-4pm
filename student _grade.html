@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>Student Grade </title>
+    </head>
+    <body>
+        <div class="div1">
+            <label>Enter maths mark:</label>
+            <input type="text" id="maths">
+            <br>
+
+            <label>Enter english mark:</label>
+            <input type="text" id="english">
+            <br>
+
+            <label>Enter computer operator mark:</label>
+            <input type="text" id="computer">
+            <br>
+
+            <label>Enter Science mark:</label>
+            <input type="text" id="Science">
+            <br>
+
+            <button type="submit" onclick="cal()">Submit</button>
+            <hr>
+            <p id="result"></p>
+        </div>
+        <script>
+            function cal(){
+                // alert("test")
+                const maths = document.getElementById("maths").value;
+                const english =document.getElementById("english").value;
+                const computer = document.getElementById("computer").value;
+                const science = document.getElementById("Science").value;
+
+                var total = parseFloat(maths) + parseFloat(english)+ parseFloat(computer) +parseFloat(science);
+                console.log(total)
+
+                var per = (total/400)*100;
+                console.log(per)
+if(maths >=100)
+{
+    alert("marks is not grater than 100")
+}
+
+                var grade=""
+                if((per<=100)&&(per>=90)){
+                    grade="A"
+                }else if((per<=90)&&(per>=60))
+                {
+                    grade="B"
+                }else if((per<=60) &&(per>=35))
+                {
+                    grade="C"
+                }else{
+                    grade="Fail"
+                }
+
+
+                document.getElementById("result").innerHTML=`Your Total marks is: ${total} <br>
+                Your Percentage is: ${per} <br>
+                Your grade is: ${grade}`
+            }
+        </script>
+    </body>
+</html>
